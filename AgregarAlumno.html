@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Registrar Alumno</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="css/estilosPortal.css">
+	<link rel="stylesheet" href="css/cssDemas/estilodemas.css">
+<link rel="stylesheet" href="css/fontello.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script src="jquery.ui.datepicker-es.js"></script>
+
+<script>
+$(function () {
+$.datepicker.setDefaults($.datepicker.regional["es"]);
+$("#datepicker").datepicker({
+firstDay: 1
+});
+});
+</script>
+</head>
+
+<body>
+	<header>
+		<div class="contenedor">
+			<img src="img/logocompleto.png" alt="h1">
+			<h1>Gestión</h1>
+			<input type="checkbox" id="menu-bar">
+			<label class="icon-menu" for="menu-bar"></label>
+
+			<nav class="menu">
+				<a href="PortalIUA.html">Página Principal</a>
+				<a href="">Docentes</a>
+				<a href="">Materias</a>
+				<a href="">Grupos</a>
+				<a href="IUAGestion.html">Cerrar Sesión</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section id="bienvenidos">
+			<h2>GESTIÓN DE ALUMNOS</h2>
+		</section>
+
+		<section id="formularioDatos_Alumnos">
+			<form action="registrarAlumno.php" method="post" class="form-registrar">
+				<h3 class="form_titulo">REGISTRAR</h3>
+				<div class="contenedor-registro">
+					<table>
+						<tr>
+							<td>
+							NUMERO DE CONTROL:
+							</td>
+							<td col>hola</td>
+						</tr>
+						<tr>
+							<td>
+							NOMBRE(S):	
+							</td>
+							<td>
+							<input type="text" name="nombre" required pattern="[A-Za-z]{5,40}"
+ 							title="Letras Tamaño mínimo: 5. Tamaño máximo: 40" class="inputD">
+							</td>
+							<td rowspan="6">
+								<img src="img/catptura.jpg" width="200px" height="250px">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							APELLIDOS:
+							</td>
+							<td>
+							<input type="Text" name="apellidos" id="nm" class="inputD">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							DIRECCION:	
+							</td>
+							<td>
+							<input type="Text" name="direccion" id="nm" class="inputD">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							NUMERO TELEFONICO:	
+							</td>
+							<td>
+							<input type="Text" name="telefono" id="nm" class="inputD">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							FECHA DE NACIMIENTO:
+							</td>
+							<td>
+							<input type="text" id="datepicker" placeholder="mm/dd/aaaa" / >
+							</td>
+						</tr>
+						<tr>
+							<td>
+							FOTO DEL ALUMNO:	
+							</td>
+							<td>
+							<input id="file-upload" type="file" accept="image/*" / class="inputD">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" name="boton" class="bto"></td>
+						</tr>
+					</table>
+			</form>
+		        </div>
+
+		</section>
+		<section id="tablaBuscar">
+			<form action="BuscarAlumno.php" method="post" class="form-buscar">
+				<h3 class="form_titulo">BUSCARAR</h3>
+				<div class="contenedor-buscar">
+					<input class="ipnSearch" type="text" name="search" value="" required pattern="[A-Za-z0-9]{6,15}" title="Usuario no válido, No coinciden con ninguna cuenta o el rango de caracteres son 6-15"><input type="radio" name="hm" value="h"> N. Control<input type="radio" name="hm" value="m"> Nombre<a class="icon-search" href="#"></a><br>
+					 <table class="tablaRes">
+    <tr class="trRes">
+      <th class="thRes">Seleccionar</th>
+      <th class="thRes">Número de control</th>
+      <th class="thRes">Nombre(s)</th>
+      <th class="thRes">Apellidos</th>
+      <th class="thRes">Número teléfonico</th>
+      <th class="thRes">Foto</th>
+    </tr>
+    <tr class="trRes">
+      <td class="tdRes">Jill</td>
+      <td class="tdRes">Smith</td>
+      <td class="tdRes">50</td>
+      <td class="tdRes">50</td>
+      <td class="tdRes">50</td>
+      <td class="tdRes">50</td>
+    </tr>
+    <tr class="trRes">
+      <td class="tdRes">Eve</td>
+      <td class="tdRes">Jackson</td>
+      <td class="tdRes">94</td>
+      <td class="tdRes">94</td>
+      <td class="tdRes">94</td>
+      <td class="tdRes">94</td>
+    </tr>
+    <tr class="trRes">
+      <td class="tdRes">Adam</td>
+      <td class="tdRes">Johnson</td>
+      <td class="tdRes">67</td>
+      <td class="tdRes">67</td>
+      <td class="tdRes">67</td>
+      <td class="tdRes">67</td>
+    </tr>
+  </table>
+			</form>
+			<td><input type="submit" name="boton" class="bto"></td>
+			<td><input type="submit" name="boton" class="bto"></td>
+		        </div>
+			
+		</section>
+
+	</main>
+	<footer>
+		<div class="contenedor">
+			<p class="copy">2020 © Instituto Universitario de América</p>
+			<div class="sociales">
+				<a class="icon-facebook-circled" href="https://www.facebook.com"></a>
+				<a class="icon-instagram-1" href="https://www.instagram.com"></a>
+				<a class="icon-whatsapp" href="https://www.whatsapp.com"></a>
+		</div>
+	</footer>
+</body>
+</html>
